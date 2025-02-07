@@ -7,6 +7,7 @@ const config = {
   password: process.env.PG_PASSWORD_PROD,
   database: process.env.PG_DATABASE_PROD,
   connectionString: process.env.PG_DATABASE_URI,
+  ssl: { rejectUnauthorized: false },
 };
 
 const pool = process.env.NODE_ENV === "prod" ? new Pool(config) : new Pool();
